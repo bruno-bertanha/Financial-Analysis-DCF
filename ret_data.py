@@ -50,3 +50,29 @@ def get_jsonparsed_data(url):
         raise ValueError("Error while requesting data from '{url}'. Error Message: '{err_msg}'.".format(
             url=url, err_msg=json_data["Error Message"]))
     return json_data
+
+def ev(ticker):
+    url = api_url_request("enterprise-value", ticker, get_api_key())
+    return get_jsonparsed_data(url)
+
+def income(ticker):
+    url = api_url_request("income-statement", ticker, get_api_key())
+    return get_jsonparsed_data(url)
+
+def balance(ticker):
+    url = api_url_request("balance-sheet-statement", ticker, get_api_key())
+    return get_jsonparsed_data(url)
+
+def cashflow(ticker):
+    url = api_url_request("cash-flow-statement", ticker, get_api_key())
+    return get_jsonparsed_data(url)
+
+def keymetrics(ticker):
+    url = api_url_request("key-metrics", ticker, get_api_key())
+    return get_jsonparsed_data(url)
+
+def stock_price(ticker):
+    url = api_url_request("quote-short", ticker, get_api_key())
+    return get_jsonparsed_data(url)
+
+
