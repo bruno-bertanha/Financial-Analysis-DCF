@@ -76,3 +76,20 @@ def stock_price(ticker):
     return get_jsonparsed_data(url)
 
 
+if __name__ == "__main__":
+    key = get_api_key()
+    # save the file as json on the data_examples folder
+    with open("data_examples/ev.json", "w") as f:
+        json.dump(ev("AAPL"), f)
+    with open("data_examples/balance.json", "w") as f:
+        json.dump(balance("AAPL"), f)
+    with open("data_examples/cashflow.json", "w") as f:
+        json.dump(cashflow("AAPL"), f)
+    with open("data_examples/keymetrics.json", "w") as f:
+        json.dump(keymetrics("AAPL"), f)
+    with open("data_examples/income.json", "w") as f:
+        json.dump(income("AAPL"), f)
+
+    
+    
+ 
